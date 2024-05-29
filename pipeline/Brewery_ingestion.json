@@ -15,7 +15,14 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/r.ikegame@hotmail.com/Brewery/notebooks/Ingestion_api_bronze"
+				},
+				"linkedServiceName": {
+					"referenceName": "Databricks_ADF",
+					"type": "LinkedServiceReference"
+				}
 			},
 			{
 				"name": "Bronze_Silver",
