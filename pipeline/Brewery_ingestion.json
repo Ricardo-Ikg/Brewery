@@ -43,7 +43,14 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/r.ikegame@hotmail.com/Brewery/notebooks/ingestion_bronze_silver"
+				},
+				"linkedServiceName": {
+					"referenceName": "Databricks_ADF",
+					"type": "LinkedServiceReference"
+				}
 			},
 			{
 				"name": "Silver_Gold",
@@ -64,7 +71,14 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/r.ikegame@hotmail.com/Brewery/notebooks/ingestion_silver_gold"
+				},
+				"linkedServiceName": {
+					"referenceName": "Databricks_ADF",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
