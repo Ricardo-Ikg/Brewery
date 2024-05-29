@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "brewery-adf"
+		},
+		"Databricks_ADF_accessToken": {
+			"value": ""
+		},
+		"Databricks_ADF_properties_typeProperties_existingClusterId": {
+			"value": "0529-050523-ymzjohq7"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
