@@ -1,0 +1,65 @@
+{
+	"name": "Brewery_ingestion",
+	"properties": {
+		"description": "Ingewstão dos dados consumidos da API",
+		"activities": [
+			{
+				"name": "API_Bronze",
+				"description": "Consumo da API e ingestão  na camada bronze",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
+			},
+			{
+				"name": "Bronze_Silver",
+				"description": "Ingestão dos dados na camada silver",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "API_Bronze",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
+			},
+			{
+				"name": "Silver_Gold",
+				"description": "Ingestão dos dados na camada Gold",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Bronze_Silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
+			}
+		],
+		"annotations": []
+	}
+}
