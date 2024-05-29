@@ -1,0 +1,33 @@
+{
+	"name": "brewery_trigger",
+	"properties": {
+		"description": "Inicialização do pipeline Brewery_ingestion",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Brewery_ingestion",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-05-29T07:12:00",
+				"timeZone": "E. South America Standard Time",
+				"schedule": {
+					"minutes": [
+						15
+					],
+					"hours": [
+						14
+					]
+				}
+			}
+		}
+	}
+}
